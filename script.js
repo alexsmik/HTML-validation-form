@@ -3,11 +3,11 @@ const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
+const passwordRepeat = document.getElementById('passwordRepeat');
 // listen
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-    checkRequired([username, email, password, password2]);
+    checkRequired([username, email, password, passwordRepeat]);
     checkLength(username, 2, 6);
     checkLength(password, 4, 8);
     checkEmail(email);
@@ -16,14 +16,14 @@ form.addEventListener('submit', function(e) {
 // show error message
 function showError(input, message) {
     const formControl = input.parentElement;
-    formControl.className = 'form-control error';
+    formControl.className = 'form error';
     const small = formControl.querySelector('small');
     small.innerText = message;
 }
 // show valid
 function showSuccess(input) {
     const formControl = input.parentElement;
-    formControl.className = 'form-control success';
+    formControl.className = 'form success';
 }
 // checking email by regexp
 function checkEmail(input) {
@@ -67,9 +67,9 @@ function checkLength(input, min, max) {
     }
 }
 // password matching
-function checkPasswordsMatch(passwOne, passwTwo) {
-    if (passwOne.value !== passwTwo.value) {
-        showError(passwTwo, 'Пароли не совпадают');
+function checkPasswordsMatch(password, passwordRepeat) {
+    if (password.value !== passwordRepeat.value) {
+        showError(passwordRepeat, 'Пароли не совпадают');
     }
 }
 // fields for translate
@@ -78,7 +78,7 @@ function fieldName(input) {
         return 'Почта';
     } else if (input === password) {
         return 'Пароль';
-    } else if (input === password2) {
+    } else if (input === passwordRepeat) {
         return 'Пароль повторно';
     } else if (input === username) {
         return 'Пользователь';

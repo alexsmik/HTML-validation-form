@@ -4,24 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
     <title>Валидатор Формы Регистрации Пользователя На Стороне Клиента</title>
   </head>
   <body>
-    <div class="container">
-      <form id="form" class="form">
-        <p><strong>Форма Регистрации Пользователя</strong></p>
-        <div class="form-control">
-          <label for="username">Введите Имя</label>
-          <input type="text" id="username" placeholder="Имя Пользователя" />
-          <small>Имя Пользователя Неверно</small>
-        </div>
-        <div class="form-control">
-          <label for="email">Введите почту</label>
-          <input type="text" id="email" placeholder="Введите почту" />
-          <small>Email Не Совпадает</small>
-        </div>
-        <button type="submit">Отправить</button>
-      </form>
-    </div>
+  <div class="container">
+    <form id="form" class="form">
+      <p><strong>Форма Регистрации Пользователя</strong></p>
+      <div class="form">
+        <label for="username">Введите Логин</label>
+        <input type="text" id="username" placeholder="Логин" />
+        <small>Логин</small>
+      </div>
+      <div class="form">
+        <label for="email">Введите почту</label>
+        <input type="text" id="email" placeholder="Введите почту" />
+        <small>Email Не Совпадает</small>
+      </div>
+      <div class="form">
+        <label for="password">Введите пароль</label>
+        <input type="password" id="password" placeholder="Введите пароль" />
+        <small>Пароль введен векоректно</small>
+      </div>
+      <div class="form">
+        <label for="password">Повторите пароль</label>
+        <input
+                type="password"
+                id="passwordRepeat"
+                placeholder="Введите пароль еще раз"
+        />
+        <small>Пароль введен некоректно</small>
+      </div>
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
   </body>
 </html>
